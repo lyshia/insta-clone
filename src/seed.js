@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 export function seedDatabase(firebase) {
   const users = [
     {
@@ -39,6 +40,7 @@ export function seedDatabase(firebase) {
   ];
 
   // eslint-disable-next-line prefer-const
+  // eslint-disable-next-line no-plusplus
   for (let k = 0; k < users.length; k++) {
     firebase.firestore().collection('users').add(users[k]);
   }
