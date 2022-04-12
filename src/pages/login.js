@@ -51,14 +51,14 @@ const Login = (props) => {
             <button
               disabled={isInvalid}
               type="submit"
-              className={`bg-blue-500 text-white w-full rounded h-8 font-bold
+              className={`bg-blue-medium text-white w-full rounded h-8 font-bold
             ${isInvalid && 'opacity-50'}`}
             >
               Login
             </button>
           </form>
         </div>
-        <div className="flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary">
+        <div className="flex justify-center items-center flex-col w-full bg-white p-4 rounded border border-gray-primary">
           <p className="text-sm">
             Don't have an account?
             {` `}
