@@ -5,7 +5,7 @@ import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 import { doesUsernameExist } from '../services/firebase';
 
-const Signup = (props) => {
+const Signup = () => {
   // useHistory is replaced by useNavigate();
   const navigate = useNavigate();
   const { firebase } = useContext(FirebaseContext);
@@ -22,7 +22,7 @@ const Signup = (props) => {
     event.preventDefault();
 
     const usernameExists = await doesUsernameExist(username);
-    if (usernameExists.length === 0) {
+    if (!usernameExists.length) {
       try {
         const createUserResult = await firebase
           .auth()
@@ -40,8 +40,8 @@ const Signup = (props) => {
           following: [],
           dateCreated: Date.now()
         });
-
-        navigate.push(ROUTES.DASHBOARD);
+        // use "navigate" instead of history.push();
+        navigate(ROUTES.DASHBOARD);
       } catch (error) {
         setFullName('');
         setEmailAddress('');
