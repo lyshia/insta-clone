@@ -12,10 +12,12 @@ const useAuthListener = () => {
         setUser(authUser);
       } else {
         localStorage.removeItem('authUser');
-        setUser(null); 
+        setUser(null);
       }
     });
-  }, []);
+
+    return () => listener();
+  }, [firebase]);
 
   return { user };
 };
