@@ -9,7 +9,7 @@ const SignUp = lazy(() => import('./pages/sign-up'));
 const Dashboard = lazy(() => import('./pages/dashboard'));
 const NotFound = lazy(() => import('./pages/not-found'));
 
-function App() {
+const App = () => {
   const { user } = useAuthListener();
   return (
     <UserContext.Provider value={{ user }}>
@@ -25,6 +25,6 @@ function App() {
       </Router>
     </UserContext.Provider>
   );
-}
+};
 
 export default App;
