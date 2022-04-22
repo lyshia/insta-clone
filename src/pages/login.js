@@ -19,7 +19,7 @@ const Login = (props) => {
     event.preventDefault();
     try {
       await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
-      useNavigate.push(ROUTES.DASHBOARD);
+      navigate(ROUTES.DASHBOARD);
     } catch (error) {
       setError(error.message);
       setEmailAddress(' ');

@@ -1,7 +1,3 @@
-const Suggestions = () => {
-    return (
-        <p> I am the suggestions</p>
-    )
-}
+const Suggestions = () => <p> I am the suggestions</p>;
 
 export default Suggestions;
