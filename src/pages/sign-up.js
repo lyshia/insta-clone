@@ -20,8 +20,8 @@ const Signup = () => {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-
     const usernameExists = await doesUsernameExist(username);
+
     if (!usernameExists.length) {
       try {
         const createUserResult = await firebase
@@ -49,7 +49,7 @@ const Signup = () => {
         setError(error.message);
       }
     } else {
-      setError('That username is already taken, please try another');
+      setError(error.message);
     }
   };
 
