@@ -16,7 +16,6 @@ export async function getUserByUserId(userId) {
     ...item.data(),
     docId: item.id
   }));
-  console.log('user firebase', user);
 
   return user;
 }
