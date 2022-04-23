@@ -1,8 +1,10 @@
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 
 const User = ({ username, fullName }) =>
+  //  console.log("username", username);
   !username || !fullName ? (
     <Skeleton count={1} height={61} />
   ) : (
@@ -15,15 +17,19 @@ const User = ({ username, fullName }) =>
         />
       </div>
       <div className="col-span-3">
-        <p className="font-bold text-sm">{username}</p>
+        <p className="font-bold text-sm">
+          {' '}
+          Username:
+          {username}
+        </p>
         <p className="text-sm">{fullName}</p>
+        <p className="text-sm"> Yee Haw </p>
       </div>
     </Link>
   );
+export default memo(User);
 
 User.propTypes = {
   username: PropTypes.string,
   fullName: PropTypes.string
 };
-
-export default User;

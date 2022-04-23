@@ -49,7 +49,7 @@ const Signup = () => {
         setError(error.message);
       }
     } else {
-      setError(' That username is already taken, please try another');
+      setError('That username is already taken, please try another');
     }
   };
 
