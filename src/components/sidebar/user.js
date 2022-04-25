@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 
 const User = ({ username, fullName }) => {
-  console.log('username', username);
+  console.log('props', username, fullName);
 };
-export default memo(User);
+
+export default User;
 
 User.propTypes = {
   username: PropTypes.string,

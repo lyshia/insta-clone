@@ -1,11 +1,15 @@
 import useUser from '../../hooks/use-user';
-
+import User from './user';
+import Suggestions from './suggestions';
+4
 const Sidebar = () => {
-  const x = useUser();
-  console.log("x", x);
+  const {
+    user: { username, fullName, userId }
+  } = useUser();
   return (
     <div className="p-4">
-     <p> Yee! </p>
+      <User />
+      <Suggestions />
     </div>
   );
 };
