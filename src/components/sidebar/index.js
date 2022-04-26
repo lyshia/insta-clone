@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <div className="p-4">
       <User username={username} fullName={fullName} />
-      <Suggestions />
+      <Suggestions userId={userId} />
     </div>
   );
 };
