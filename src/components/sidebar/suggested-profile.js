@@ -31,7 +31,7 @@ const SuggestedProfile = ({ profileDocId, username, profileId, userId, loggedInU
             type="button"
             onClick={handleFollowUser}
           >
-            Follow this person
+            Follow
           </button>
         </div>
       </div>
