@@ -8,9 +8,7 @@ const SuggestedProfile = ({ profileDocId, username, profileId, userId, loggedInU
 
   async function handleFollowUser() {
     setFollowed(true);
-
     await updateLoggedInUserFollowing(loggedInUserDocId, profileId, false);
-
     await updateFollowedUserFollowers(profileDocId, userId, false);
   }
 
@@ -25,16 +23,14 @@ const SuggestedProfile = ({ profileDocId, username, profileId, userId, loggedInU
         <Link to={`/p/${username}`}>
           <p className="font-bold text-sm">{username}</p>
         </Link>
-        <div>
-          <button
-            className="text-xs font-bold text-blue-medium"
-            type="button"
-            onClick={handleFollowUser}
-          >
-            Follow
-          </button>
-        </div>
       </div>
+      <button
+        className="text-xs font-bold text-blue-medium"
+        type="button"
+        onClick={handleFollowUser}
+      >
+        Follow
+      </button>
     </div>
   ) : null;
 };
